@@ -17,9 +17,11 @@ public class Main {
             System.out.println("Введите текст или 'stop' для заверения");
             do {
                 str = buffRead.readLine();
-                writer.write(str);
-                writer.append(";");
-                writer.flush();
+                if(!str.equals("stop")) {
+                    writer.write(str);
+                    writer.append(";");
+                    writer.flush();
+                }
             }
             while (!str.equals("stop"));
         }
